@@ -7,4 +7,4 @@ rustup target add ${TARGET}
 rustup toolchain install nightly --target ${TARGET}
 rustup component add rust-src --toolchain nightly --target ${TARGET}
 
-cargo-zigbuild +nightly build -r --target ${TARGET} -vv
+cargo +nightly zigbuild -r --target ${TARGET} -vv
