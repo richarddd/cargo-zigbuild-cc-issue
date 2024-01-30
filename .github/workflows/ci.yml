@@ -20,6 +20,12 @@ jobs:
         uses: dtolnay/rust-toolchain@v1
         with:
           toolchain: nightly
+      - name: Install Linux dependencies
+        if: inputs.platform == 'linux'
+        run: |
+          sudo apt-get -y update
+          sudo apt-get -y install make cmake
+          sudo snap install zig --classic --beta
       - name: Install cargo zig-build
         run: |
           cargo install cargo-zigbuild
