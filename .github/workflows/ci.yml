@@ -21,7 +21,6 @@ jobs:
         with:
           toolchain: nightly
       - name: Install Linux dependencies
-        if: inputs.platform == 'linux'
         run: |
           sudo apt-get -y update
           sudo apt-get -y install make cmake
